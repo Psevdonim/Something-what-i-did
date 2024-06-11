@@ -1,0 +1,42 @@
+$font-weights: (
+    'regular': 400,
+    'medium': 500,
+    'bold': 700
+);
+
+$container: (
+    'xxxl': 1600px,
+    'xxl': 1440px,
+    'xl': 1280px,
+    'lg': 1024px,
+    'md': 768px,
+    'sm': 576px,
+    'xsm': 375px,
+    'xxsm': 310px
+);
+
+$container-max-widths: (
+    'xxxl': 1440px,
+    'xxl': 1320px,
+    'xl': 1140px,
+    'lg': 960px,
+    'md': 720px,
+    'sm': 540px
+);
+
+$font_sizes: (
+    'small': 12px,
+    'standard': 14px,
+    'h6': 16px,
+    'h5': 18px,
+    'h4': 20px,
+    'h3': 24px,
+    'h2': 32px,
+    'h1': 48px
+);
+
+$theme_colors: (
+    'main': #80808a,
+    'second': #35a0ff,
+    'third': #fa563b
+);
