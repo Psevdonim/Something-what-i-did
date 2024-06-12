@@ -1,6 +1,6 @@
 <template>
     <div class="pdf">
-        <BaseInput v-model:data="link"  wide title="Link" class="mb-16" /> -- по сути этот PDF-viewer не подразумевался,
+        <BaseInput v-model:data="link" wide title="Link" class="mb-16" /> -- по сути этот PDF-viewer не подразумевался,
         что-бы он менял пдфки реактивно через ссылку, однако это было допилино ради интереса
         <PdfViewer v-model:link="link" />
     </div>

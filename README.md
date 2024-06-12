@@ -1,18 +1,3 @@
-# fast_project
-
-This template should help get you started developing with Vue 3 in Vite.
-
-## Recommended IDE Setup
-
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
-
-## Type Support for `.vue` Imports in TS
-
-TypeScript cannot handle type information for `.vue` imports by default, so we replace the `tsc` CLI with `vue-tsc` for type checking. In editors, we need [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) to make the TypeScript language service aware of `.vue` types.
-
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
 
 ## Project Setup
 
@@ -32,14 +17,30 @@ npm run dev
 npm run build
 ```
 
-### Run Unit Tests with [Vitest](https://vitest.dev/)
-
-```sh
-npm run test:unit
-```
-
 ### Lint with [ESLint](https://eslint.org/)
 
 ```sh
 npm run lint
 ```
+
+
+
+### этот проект ни на что не претендует, просто показывает, что я могу\делал когда либо, некоторые знания во вью, но не раскрывает все. Так как нет желания сюда тащить FSD, оставлять ssh скрипт для генерации компонентов в FSD|Atomic|Modules архитектуре 
+
+### здесь намерено не был использован I18n, так как он здесь не то, что бы нужен, также как и axios\graphql и прочие
+
+### для того, что-бы подключить websocket не знаю какого-то плейсхолдера, по этому также не используется
+
+### Options api без метода Setup не показал, так как на нем написаны относительно старые проекты и не вижу смысла писать на нем новые
+
+### использование Options Api вместе с методом Setup лично мне кажется удобнее, чем SFC, однако <script setup> также использовал в проекте (зависит от изначального подхода к написанию)
+
+### в eslint намерено был имплементирован Prettier config что-бы видны были ошибки при написании и что автоматом пофиксится (мне так удобнее)
+
+### не уверен, что конфиги eslint и prettier подойдут всем, по этой причине можете локально переписать их под себя
+
+### Красота страниц и контент наполнения уходит немного на задний план, так как это просто личный проект, что-бы показать, что я делал с JS\TS в первую очередь.
+
+
+
+

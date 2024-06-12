@@ -1,0 +1,47 @@
+@use 'sass:map';
+
+.tabs {
+	&__tab-names {
+		@include flex;
+	}
+
+	&__header {
+		padding: 16px;
+
+		border-bottom: 1px solid map.get($theme_colors, 'separate-background');
+	}
+
+	&__tab-name {
+		padding: 8px 8px 15px;
+		color: map.get($theme_colors, 'main');
+		font-weight: 600;
+		transition: 0.2s linear;
+		cursor: pointer;
+		position: relative;
+
+		&:after {
+			content: '';
+			opacity: 0;
+			height: 4px;
+			width: 100%;
+			border-radius: 5px 5px 0 0;
+			background: map.get($theme_colors, 'third');
+			position: absolute;
+			bottom: 2px;
+			left: 0;
+			transition: 0.2s linear;
+		}
+
+		&:hover {
+			color: map.get($theme_colors, 'third');
+		}
+
+		&._active {
+			color: map.get($theme_colors, 'third');
+
+			&:after {
+				opacity: 1;
+			}
+		}
+	}
+}

@@ -1,0 +1,36 @@
+@use 'sass:map';
+
+.custom-input-switch {
+	&__wrapper {
+		@include flex;
+		flex-wrap: wrap;
+		gap: 8px;
+	}
+	&__item {
+		border-radius: 8px;
+		padding: 10px;
+		font-weight: 700;
+		border: 1px solid map.get($theme_colors, 'grey');
+		cursor: pointer;
+		transition: 0.2s linear;
+
+		@include flex;
+
+		svg path {
+			transition: 0.2s linear;
+		}
+
+		&._active {
+			color: map.get($theme_colors, 'white');
+			background: map.get($theme_colors, 'dark-secondary');
+
+			&._ultradark-secondary {
+				background: map.get($theme_colors, 'ultradark-secondary');
+			}
+
+			svg path {
+				fill: map.get($theme_colors, 'white');
+			}
+		}
+	}
+}
