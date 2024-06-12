@@ -37,6 +37,22 @@ $font_sizes: (
 
 $theme_colors: (
     'main': #80808a,
-    'second': #35a0ff,
-    'third': #fa563b
+    'third': #fa563b,
+    'main-background': #133c6c,
+
+    'dark-error': #de5252,
+    'error': #e88282,
+    'light-error': #fbeaea,
+
+    'dark-success': #279158,
+    'success': #81c0a2,
+    'light-success': #e7f3ed,
+
+    'dark-warning': #e78618,
+    'warning': #f3b467,
+    'light-warning': #fdf1e3,
+
+    'dark-secondary': #35a0ff,
+    'secondary': #99cfff,
+    'light-secondary': #f2f7fd
 );

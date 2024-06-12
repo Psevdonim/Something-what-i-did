@@ -1,0 +1,29 @@
+@use 'sass:map';
+
+.base-button {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    border: 1px solid map.get($theme_colors, 'third');
+    font-weight: 600;
+    font-size: map.get($font_sizes, 'standard');
+    transition: 0.2s linear;
+
+    &._secondary {
+        border: 1px solid map.get($theme_colors, 'dark-secondary');
+    }
+    &._error {
+        border: 1px solid map.get($theme_colors, 'dark-error');
+    }
+    &._warning {
+        border: 1px solid map.get($theme_colors, 'dark-warning');
+    }
+    &._success {
+        border: 1px solid map.get($theme_colors, 'dark-success');
+    }
+    &._main {
+        border: 1px solid map.get($theme_colors, 'main');
+    }
+}

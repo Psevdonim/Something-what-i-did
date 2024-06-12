@@ -1,0 +1,71 @@
+@use 'sass:map';
+
+.card {
+	padding: 32px 50px;
+	box-shadow: 16px 16px 8px rgba(0, 0, 0, 0.05);
+	border: 1px solid map.get($theme_colors, 'separate-background');
+	border-radius: 16px;
+	width: 100%;
+	margin: 0;
+
+	&._small-shadow {
+		box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08);
+	}
+
+	&._grey {
+		background: map.get($theme_colors, 'ultralight-grey');
+	}
+
+	&._white {
+		background: map.get($theme_colors, 'white');
+		border: 1px solid map.get($theme_colors, 'light-grey');
+	}
+
+	&._blue {
+		background: map.get($theme_colors, 'light-secondary');
+		border: 1px solid map.get($theme_colors, 'dark-secondary');
+	}
+
+	&._success {
+		background: map.get($theme_colors, 'light-success');
+		border: 1px solid map.get($theme_colors, 'dark-success');
+	}
+
+	&._red {
+		background: map.get($theme_colors, 'light-error');
+		border: 1px solid map.get($theme_colors, 'dark-error');
+	}
+
+	&._warning {
+		background: map.get($theme_colors, 'light-warning');
+		border: 1px solid map.get($theme_colors, 'dark-warning');
+	}
+
+	&._disable-shadow {
+		box-shadow: 16px 16px 8px rgba(0, 0, 0, 0);
+	}
+
+	&._disable-border {
+		border: 1px solid transparent;
+	}
+
+	&._disable-padding {
+		padding: 0 !important;
+	}
+
+	&._small {
+		padding: 24px;
+	}
+
+	&._ultrasmall {
+		padding: 16px;
+	}
+
+	&._certificate {
+		padding: 32px;
+	}
+
+	&._overflow-auto {
+		overflow: auto !important;
+	}
+}

@@ -1,0 +1,44 @@
+@use 'sass:map';
+@use 'sass:list';
+
+.increment {
+    padding: 16px;
+    border-radius: 8px;
+    @include flex-between-center;
+    flex-direction: column;
+    gap: 16px;
+
+    $colors: map.values($theme_colors);
+    @each $color in $colors {
+        $index: list.index($colors, $color);
+        $length: list.length($colors);
+
+        &:nth-of-type(#{$length}n + #{$index}) {
+            border: 2px solid $color;
+        }
+    }
+
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 340px));
+        gap: 16px;
+        width: 100%;
+    }
+
+    &__buttons {
+        @include flex-between-center;
+        gap: 16px;
+    }
+}
+
+.increments {
+    @include flex-between-center;
+    gap: 24px;
+
+    &__wrapper {
+        padding: 2px;
+        border: 1px solid black;
+        border-radius: 8px;
+        width: 100%;
+    }
+}

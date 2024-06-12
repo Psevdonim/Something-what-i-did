@@ -21,6 +21,28 @@
     gap: 10px;
 }
 
+// For margins (divide by 8)
+
+@mixin margins {
+    $names: (
+        '.m': 'margin',
+        '.mb': 'margin-bottom',
+        '.mt': 'margin-top',
+        '.mr': 'margin-right',
+        '.ml': 'margin-left'
+    );
+
+    @each $name, $style in $names {
+        #{$name} {
+            @for $i from 0 through 20 {
+                &-#{$i*8} {
+                    #{$style}: $i * 8 + 0px !important;
+                }
+            }
+        }
+    }
+}
+
 // For Grid Row and Columns
 
 //@mixin grid_sizes {
@@ -31,34 +53,12 @@
 //    }
 //}
 
-// For margins (divide by 8)
-
-//@mixin margins {
-//    $names: (
-//        '.m': 'margin',
-//        '.mb': 'margin-bottom',
-//        '.mt': 'margin-top',
-//        '.mr': 'margin-right',
-//        '.ml': 'margin-left'
-//    );
-
-//    @each $name, $style in $names {
-//        #{$name} {
-//            @for $i from 0 through 20 {
-//                &-#{$i*5} {
-//                    #{$style}: $i * 8 + 0px !important;
-//                }
-//            }
-//        }
-//    }
-//}
-
 // animation of the element if the same value is entered
 
 //$colors: (
 //    map.get($theme_colors, 'third'),
 //    map.get($theme_colors, 'switcher-active'),
-//    map.get($theme_colors, 'dark-secondary') map.get($theme_colors, 'dark-success'),
+//    map.get($theme_colors, 'dark-secondary'), map.get($theme_colors, 'dark-success'),
 //    map.get($theme_colors, 'dark-warning')
 //);
 

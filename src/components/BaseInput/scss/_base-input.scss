@@ -1,0 +1,16 @@
+@use 'sass:map';
+.base-input {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid map.get($theme_colors, 'light-grey');
+    transition: 0.2s linear;
+    max-width: 300px;
+
+    &:not(:placeholder-shown) {
+        border: 1px solid map.get($theme_colors, 'dark-secondary');
+    }
+
+    &._wide {
+        width: 100%;
+    }
+}

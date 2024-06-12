@@ -1,0 +1,135 @@
+@use 'sass:map';
+.pdf {
+    &-menu {
+        overflow: auto;
+        max-width: 200px;
+        min-width: 200px;
+        max-height: 1024px;
+        padding: 16px !important;
+        border-right: 1px solid map.get($theme_colors, 'light-grey');
+
+        .pdf-page {
+            max-width: 100%;
+            object-fit: contain;
+        }
+
+        .pdf-page__wrapper {
+            transition: 0.2s linear;
+            cursor: pointer;
+            margin: 0;
+            padding: 0 !important;
+            border-radius: 5px;
+
+            &:hover {
+                box-shadow: 0px 0px 10px 0px map.get($theme_colors, 'secondary');
+                border: 1px solid map.get($theme_colors, 'dark-secondary');
+            }
+
+            &._active {
+                box-shadow: 0px 0px 10px 0px map.get($theme_colors, 'secondary');
+                border: 1px solid map.get($theme_colors, 'dark-secondary');
+                cursor: auto;
+
+                &:hover {
+                    box-shadow: 0px 0px 10px 0px map.get($theme_colors, 'secondary');
+                    border: 1px solid map.get($theme_colors, 'dark-secondary');
+                }
+            }
+
+            .pdf-page {
+                border: none !important;
+            }
+        }
+    }
+
+    .pdf-pages {
+        margin: 0 auto;
+        padding: 20px;
+        overflow: auto;
+        width: 100%;
+    }
+
+    &-page__wrapper {
+        margin-bottom: 20px !important;
+        &:nth-last-of-type(1) {
+            margin-bottom: 0px !important;
+        }
+
+        > div {
+            width: fit-content;
+        }
+
+        .pdf-page {
+            position: relative;
+            transform-origin: 0 0;
+            border: 1px solid rgba(#80808a, 0.2);
+            border-radius: 10px;
+        }
+
+        .pdf-page__inner {
+            margin: 0 auto;
+            position: relative;
+        }
+    }
+
+    &-wrapper {
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+        min-height: 1024px;
+        width: 100%;
+    }
+
+    &-viewer {
+        width: calc(var(--scale-factor) * 612px);
+        height: calc(var(--scale-factor) * 502px);
+    }
+}
+
+.text-layer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    opacity: 0.2;
+    line-height: 1;
+    max-width: 100%;
+}
+
+.text-layer > span {
+    color: transparent;
+    position: absolute;
+    white-space: pre;
+    cursor: text;
+    transform-origin: 0% 0%;
+}
+
+.annotation-layer {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    overflow: hidden;
+    opacity: 0.2;
+    line-height: 1;
+}
+
+.annotation-layer > section {
+    color: transparent;
+    position: absolute;
+    white-space: pre;
+    cursor: text;
+    transform-origin: 0% 0%;
+}
+
+.annotation-layer > .linkAnnotation > a {
+    position: absolute;
+    font-size: 1em;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}

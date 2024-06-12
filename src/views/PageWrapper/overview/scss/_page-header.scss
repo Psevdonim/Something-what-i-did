@@ -1,3 +1,5 @@
+@use 'sass:map';
+
 .page-header {
     width: 100vw;
     padding: 20px 30px;
@@ -32,9 +34,25 @@
         padding-left: 0;
 
         &-item a {
-            font-size: 16px;
+            font-size: map.get($font_sizes, 'big');
+            color: map.get($theme_colors, 'second');
+            font-weight: 600;
+            text-decoration: none;
+            transition: 0.2s linear;
+            &:active {
+                text-decoration: none;
+            }
+
+            &:hover {
+                text-decoration: none;
+                background: none;
+            }
+            &:hover:not(.router-link-active) {
+                opacity: 0.8;
+            }
 
             &.router-link-active {
+                color: map.get($theme_colors, 'third');
             }
         }
     }

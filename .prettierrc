@@ -1,0 +1,11 @@
+{
+    "doubleQuote": true,
+    "semi": true,
+    "tabWidth": 4,
+    "printWidth": 120,
+    "editor.formatOnSave": true,
+    "prettier.eslintIntegration": true,
+    "arrowParens": "always",
+    "endOfLine": "auto",
+    "useTabs": false
+}

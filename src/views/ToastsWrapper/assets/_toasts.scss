@@ -1,0 +1,53 @@
+@use 'sass:map';
+
+.toasts {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 5;
+
+    &__wrapper {
+        position: absolute;
+
+        @media screen and (min-width: map.get($container,'xxsm')) and (max-width: map.get($container,'md')) {
+            right: 10px;
+            bottom: 10px;
+            max-width: 300px;
+            gap: 10px;
+
+            .toasts__item {
+                padding: 10px 15px;
+                width: auto;
+            }
+
+            .toast__icon {
+                padding: 5px !important;
+            }
+            .toast__title {
+                font-size: map.get($font_sizes, 'big') !important;
+            }
+        }
+
+        @media screen and (min-width: map.get($container,'md')) {
+            right: 20px;
+            bottom: 50px;
+            min-width: 250px;
+
+            .toasts__item {
+                padding: 15px;
+            }
+        }
+
+        @media screen and (min-width: map.get($container,'lg')) {
+            right: 50px;
+            bottom: 100px;
+
+            .toasts__item {
+                padding: 25px;
+            }
+        }
+    }
+}

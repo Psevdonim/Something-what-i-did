@@ -1,0 +1,121 @@
+@use 'sass:map';
+
+.toast {
+    position: relative;
+    pointer-events: all;
+    width: fit-content !important;
+    margin-left: auto;
+    background: map.get($theme_colors, 'light-secondary');
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 16px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.12);
+    border: 1px solid #66b7ff;
+    color: map.get($theme_colors, 'black');
+    position: relative;
+
+    a {
+        color: map.get($theme_colors, 'black');
+        text-decoration: underline;
+    }
+
+    &:hover {
+        .toast__close {
+            opacity: 0.5;
+        }
+    }
+
+    &__icon {
+        padding: 10px;
+        border-radius: 8px;
+        background: map.get($theme_colors, 'dark-secondary');
+    }
+
+    &__wrapper {
+        @include flex-between-center;
+        gap: 20px;
+        min-width: 200px;
+        max-width: 500px;
+        width: 100%;
+    }
+
+    &__description {
+        text-align: justify;
+        white-space: pre-wrap;
+    }
+
+    &__content {
+        padding-right: 15px;
+        width: 100%;
+        word-wrap: break-word;
+    }
+
+    &__title {
+        font-size: map.get($font_sizes, 'buttons');
+        font-weight: 600;
+        margin-bottom: 5px;
+        word-wrap: break-word;
+        white-space: pre-wrap;
+    }
+
+    &__close {
+        align-self: flex-start;
+        cursor: pointer;
+        pointer-events: all;
+        position: absolute;
+        top: 8px;
+        right: 8px;
+        opacity: 0;
+        transition: 0.3s linear;
+        height: 16px;
+        width: 16px;
+
+        &::after,
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(45deg);
+            width: 100%;
+            height: 2px;
+            background: map.get($theme_colors, 'main');
+        }
+        &:before {
+            transform: translate(-50%, -50%) rotate(-45deg);
+        }
+    }
+
+    &__link,
+    a {
+        cursor: pointer;
+        pointer-events: all;
+    }
+
+    &._error {
+        background: map.get($theme_colors, 'light-error');
+        border: 1px solid #de5252;
+
+        .toast__icon {
+            background: #de5252;
+        }
+    }
+
+    &._warning {
+        background: map.get($theme_colors, 'light-warning');
+        border: 1px solid map.get($theme_colors, 'dark-warning');
+
+        .toast__icon {
+            background: map.get($theme_colors, 'dark-warning');
+        }
+    }
+
+    &._success {
+        background: #e7f3ed;
+        border: 1px solid map.get($theme_colors, 'dark-success');
+
+        .toast__icon {
+            background: map.get($theme_colors, 'dark-success');
+        }
+    }
+}

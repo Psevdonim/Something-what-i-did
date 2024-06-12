@@ -1,8 +1,6 @@
 <template>
     <PageWrapper>
-        <transition>
-            <RouterView />
-        </transition>
+        <RouterView />
     </PageWrapper>
 </template>
 
