@@ -1,3 +1,5 @@
-import Tabs from "./Tabs.vue";
+import { defineAsyncComponent } from "vue";
 
-export { Tabs };
+const Tabs = defineAsyncComponent(() => import("./Tabs.vue"));
+
+export default Tabs;

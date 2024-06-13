@@ -11,7 +11,7 @@
             />
         </div>
         <div class="tabs__wrapper">
-            <slot />
+            <slot name="activeTab" :active="currentActive" />
         </div>
     </div>
 </template>

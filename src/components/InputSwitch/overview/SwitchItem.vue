@@ -1,19 +1,18 @@
 <template>
     <div
         class="custom-input-switch__item"
-        @click="changeActive"
         :class="{
             [`_${type}`]: type,
-            _active: active === value,
+            _active: data === value,
         }"
+        @click="changeData"
     >
-        <Icon :icon="icon" v-if="icon" /> {{ title }}
+        {{ title }}
     </div>
 </template>
 
 <script>
 import { defineComponent } from "vue";
-import { Icon } from "../../Icon";
 
 const SwitchItem = defineComponent({
     props: {
@@ -29,7 +28,7 @@ const SwitchItem = defineComponent({
             type: String,
             default: "",
         },
-        active: {
+        data: {
             type: String,
             default: "",
         },
@@ -37,14 +36,13 @@ const SwitchItem = defineComponent({
             type: String,
         },
     },
-    emits: ["update:active"],
-    components: { Icon },
+    emits: ["update:data"],
     setup(props, { emit }) {
-        const changeActive = () => {
-            emit("update:active", props.value);
+        const changeData = () => {
+            emit("update:data", props.value);
         };
 
-        return { changeActive };
+        return { changeData };
     },
 });
 export default SwitchItem;

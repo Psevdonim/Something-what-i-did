@@ -2,7 +2,7 @@
     <div>
         <div class="custom-input-switch custom-input-switch__wrapper">
             <SwitchItem
-                v-model:active="active"
+                v-model:data="currentData"
                 v-for="item of items"
                 :title="item.title ?? item[keyName]"
                 :value="item[keyName] ?? item.title"
@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { defineComponent, defineAsyncComponent } from "vue";
+import { defineComponent, defineAsyncComponent, computed } from "vue";
 
 const SwitchItem = defineAsyncComponent(() => import("./overview/SwitchItem.vue"));
 
@@ -53,7 +53,7 @@ const InputSwitch = defineComponent({
         SwitchItem,
     },
     setup(props, { emit }) {
-        const active = computed({
+        const currentData = computed({
             get() {
                 return props.data;
             },
@@ -62,14 +62,12 @@ const InputSwitch = defineComponent({
             },
         });
 
-        return { active };
+        return { currentData };
     },
 });
 export default InputSwitch;
 </script>
 
 <style lang="scss">
-.custom {
-    @import "./input-switch";
-}
+@import "./input-switch";
 </style>

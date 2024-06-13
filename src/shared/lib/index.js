@@ -38,3 +38,21 @@ export const downloadFile = async (url, filename) => {
         console.error("Error downloading the file:", error.message);
     }
 };
+
+export const standartizeLink = (link) => {
+    if (!link || typeof link !== "string") {
+        return null;
+    }
+    if (link?.length) {
+        if (!link?.startsWith("/") && !link?.startsWith("http")) {
+            return "/" + link;
+        }
+
+        if (link?.startsWith("//")) {
+            return link.substring(1);
+        }
+
+        return link;
+    }
+    return "/";
+};

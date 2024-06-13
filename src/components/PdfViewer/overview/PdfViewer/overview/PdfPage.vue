@@ -66,7 +66,7 @@ export default defineComponent({
                 const textContent = await props.page.getTextContent();
                 const annotations = await props.page.getAnnotations();
 
-                await pdfSettings.pdfLib.renderTextLayer({
+                await pdfSettings.pdfLib?.renderTextLayer({
                     textContentSource: textContent,
                     container: textRef.value,
                     viewport: viewport.value.clone({ dontFlip: true }),
@@ -106,7 +106,6 @@ export default defineComponent({
                         document.querySelector(".pdf-pages")?.clientWidth ||
                         cardRef.value.parentElement.clientWidth ||
                         document.querySelector(".pdf")?.clientWidth;
-                    console.log(clientWidth, width);
                     clientWidth -= 50;
                     scale = clientWidth / width;
                     pdfSettings.scale = scale;

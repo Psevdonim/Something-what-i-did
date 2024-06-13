@@ -11,18 +11,17 @@ const router = createRouter({
         {
             path: "/increment",
             name: "Increment",
-            // route level code-splitting
-            // this generates a separate chunk (About.[hash].js) for this route
-            // which is lazy-loaded when the route is visited.
             component: () => import("../views/IncrementView"),
         },
         {
             path: "/pdf-viewer",
             name: "Pdf Viewer",
-            // route level code-splitting
-            // this generates a separate chunk (About.[hash].js) for this route
-            // which is lazy-loaded when the route is visited.
             component: () => import("../views/PdfViewerPage"),
+        },
+        {
+            path: "/tables",
+            name: "Tables",
+            component: () => import("../views/TableTabs"),
         },
     ],
 });
