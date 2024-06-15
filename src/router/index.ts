@@ -23,6 +23,11 @@ const router = createRouter({
             name: "Tables",
             component: () => import("../views/TableTabs"),
         },
+        {
+            path: "/modals",
+            name: "Modals",
+            component: () => import("../views/ModalView"),
+        },
     ],
 });
 

@@ -1,12 +1,16 @@
-import { ref, watch, computed } from "vue";
+import { ref, watch, computed, shallowRef } from "vue";
 import { tabs } from "./constants/tabs";
 import * as allColumns from "./constants/columns";
 import { getItems } from "./api/api";
 import { useNotificationsStore } from "@/stores";
+import { useLoader, addCaching } from "@/shared/lib";
+const cachedGetItems = addCaching(getItems);
 
 export function useTableTabs() {
+    const { loading, startLoading, stopLoading } = useLoader();
+
     const activeIndex = ref("users");
-    const items = ref([]);
+    const items = shallowRef([]);
     const columns = computed(() => allColumns[activeIndex.value]);
     let controller = new AbortController();
 
@@ -15,13 +19,16 @@ export function useTableTabs() {
         controller = new AbortController();
 
         try {
-            const res = await getItems(newActive, controller);
+            startLoading();
+            const res = await cachedGetItems(newActive, controller);
             items.value = res;
         } catch (error) {
             useNotificationsStore().addNotification({
                 body: error.message,
                 type: "error",
             });
+        } finally {
+            stopLoading();
         }
     };
 
@@ -33,5 +40,5 @@ export function useTableTabs() {
         { immediate: true },
     );
 
-    return { tabs, columns, items, activeIndex };
+    return { tabs, columns, items, activeIndex, loading };
 }

@@ -1,4 +1,4 @@
-<template lang="">
+<template>
     <input
         class="base-input"
         :class="{

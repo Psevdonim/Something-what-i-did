@@ -33,26 +33,32 @@
         width: auto;
         padding-left: 0;
 
-        &-item a {
-            font-size: map.get($font_sizes, 'big');
-            color: map.get($theme_colors, 'second');
-            font-weight: 600;
-            text-decoration: none;
-            transition: 0.2s linear;
-            &:active {
-                text-decoration: none;
-            }
+        &-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-            &:hover {
+            a {
+                font-size: map.get($font_sizes, 'big');
+                color: map.get($theme_colors, 'second');
+                font-weight: 600;
                 text-decoration: none;
-                background: none;
-            }
-            &:hover:not(.router-link-active) {
-                opacity: 0.8;
-            }
+                transition: 0.2s linear;
+                &:active {
+                    text-decoration: none;
+                }
 
-            &.router-link-active {
-                color: map.get($theme_colors, 'third');
+                &:hover {
+                    text-decoration: none;
+                    background: none;
+                }
+                &:hover:not(.router-link-active) {
+                    opacity: 0.8;
+                }
+
+                &.router-link-active {
+                    color: map.get($theme_colors, 'third');
+                }
             }
         }
     }

@@ -1,0 +1,306 @@
+@use 'sass:map';
+
+.skeleton {
+	.image__img {
+		width: 100px;
+		height: 100px;
+		background-color: #ddd;
+	}
+
+	&-info {
+		span {
+			min-width: 100px;
+			height: 16px;
+			display: inline-block;
+			background-color: #ddd;
+			animation: pulse-bg 1s infinite;
+		}
+
+		.icon {
+			min-width: auto;
+		}
+
+		h1 {
+			content: ' ';
+			width: 250px;
+			height: 40px;
+			background-color: #ddd;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			animation: pulse-bg 1s infinite;
+		}
+
+		h3 {
+			content: ' ';
+			width: 250px;
+			height: 24px;
+			background-color: #ddd;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			animation: pulse-bg 1s infinite;
+		}
+
+		p {
+			width: 80%;
+			background-color: #ddd;
+			height: 16px;
+			line-height: 140%;
+			margin-bottom: 10px;
+			animation: pulse-bg 1s infinite;
+		}
+	}
+
+	.certificate {
+		p {
+			width: 300px;
+		}
+	}
+
+	.button {
+		animation:
+			pulse-bg 1s infinite,
+			pulse-border 1s infinite;
+
+		&._transparent {
+			background: none !important;
+		}
+
+		p {
+			background: none !important;
+			margin-bottom: 0 !important;
+		}
+	}
+
+	.w100 {
+		width: 100% !important;
+		max-width: 100%;
+	}
+
+	.h200 {
+		height: 200px;
+	}
+
+	.table {
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		border-radius: 5px;
+
+		&-head,
+		&-body {
+			display: flex;
+			flex-direction: column;
+		}
+
+		&-head {
+			border-bottom: 1px solid #ddd;
+		}
+
+		&-body {
+			.row {
+				&:nth-child(2n + 1) {
+					background-color: map.get($theme_colors, 'ultralight-grey');
+				}
+			}
+		}
+		.row {
+			display: flex;
+		}
+
+		.col {
+			width: 100%;
+			min-height: 40px;
+			padding: 10px;
+			@include flex-center-center;
+		}
+	}
+
+	.mw10 {
+		max-width: 10%;
+		width: 10%;
+	}
+
+	.mw20 {
+		max-width: 20%;
+		width: 20%;
+	}
+
+	.mw30 {
+		max-width: 30%;
+		width: 30%;
+	}
+
+	.mw40 {
+		max-width: 40%;
+		width: 40%;
+	}
+
+	.mw100 {
+		max-width: 100%;
+		width: 100%;
+	}
+
+	.mw20px {
+		max-width: 20px;
+		min-width: 20px;
+		width: 20px;
+	}
+
+	.mw200px {
+		max-width: 200px;
+		min-width: 200px;
+		width: 200px;
+	}
+
+	.mw150px {
+		max-width: 150px;
+		min-width: 150px;
+		width: 150px;
+	}
+
+	.h500 {
+		height: 500px;
+	}
+
+	.h50 {
+		height: 50px;
+	}
+
+	.h150 {
+		height: 150px;
+	}
+
+	.transparent {
+		background: transparent !important;
+	}
+
+	.icon {
+		background: transparent !important;
+	}
+
+	.df {
+		display: flex;
+	}
+
+	.g20 {
+		gap: 20px;
+	}
+
+	.wrap {
+		flex-wrap: wrap;
+	}
+
+	.jcsb {
+		justify-content: space-between;
+	}
+
+	.jcfe {
+		justify-content: flex-end;
+	}
+
+	.aic {
+		align-items: center;
+	}
+
+	.row {
+		width: 100%;
+		display: flex;
+		gap: 40px;
+	}
+
+	.tac {
+		text-align: center;
+	}
+
+	.fdc {
+		flex-direction: column;
+	}
+
+	.tar {
+		text-align: right;
+	}
+
+	.dashboard {
+		animation: pulse-border 1s infinite;
+		border-radius: 20px;
+
+		.col {
+			padding: 25px;
+			&:not(:nth-last-child(1)) {
+				border-bottom: 1px solid #ddd;
+			}
+		}
+
+		.donut-graph {
+			min-height: 250px;
+			padding: 30px;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			&:before,
+			&:after {
+				animation: pulse-bg 1s infinite;
+				content: '';
+				height: 180px;
+				width: 180px;
+				position: absolute;
+				border-radius: 50%;
+			}
+
+			&:after {
+				content: '';
+				height: 100px;
+				width: 100px;
+				position: absolute;
+				background-color: white !important;
+				border-radius: 50%;
+				z-index: 2;
+			}
+		}
+
+		.card-header {
+			animation: pulse-bg 1s infinite;
+			padding: 35px;
+		}
+	}
+
+	.switcher__inner {
+		height: 40px;
+		width: 120px;
+		&._active {
+			animation: pulse-bg 1s infinite;
+		}
+	}
+
+	.skeleton-photo-managment {
+		width: 100%;
+		max-width: 100%;
+		gap: 20px;
+
+		.skeleton-photo {
+			width: 100%;
+
+			.photo {
+				height: 300px;
+				animation: pulse-bg 1s infinite;
+				width: 100%;
+				border-radius: 16px;
+			}
+		}
+	}
+
+	.icon {
+		width: 24px;
+		height: 24px;
+		border-radius: 5px;
+		animation: pulse-bg 1s infinite;
+	}
+
+	.big-icon {
+		width: 50px;
+		height: 50px;
+		border-radius: 10px;
+		animation: pulse-bg 1s infinite;
+	}
+}

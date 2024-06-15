@@ -1,0 +1,28 @@
+@use 'sass:map';
+
+.base-table {
+    width: 100%;
+    border-collapse: collapse;
+
+    &__row,
+    &__header {
+        width: 100%;
+        transition: 0.2s linear;
+
+        &-item {
+            transition: 0.2s linear;
+            padding: 8px 16px;
+            border-bottom: 1px solid map.get($theme_colors, 'secondary');
+        }
+    }
+
+    &__row {
+        &:hover {
+            background: map.get($theme_colors, 'light-secondary');
+
+            .base-table__row-item {
+                border-bottom: 1px solid map.get($theme_colors, 'dark-secondary');
+            }
+        }
+    }
+}

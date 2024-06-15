@@ -1,4 +1,4 @@
-<template lang="">
+<template>
     <button
         class="base-button"
         :class="{

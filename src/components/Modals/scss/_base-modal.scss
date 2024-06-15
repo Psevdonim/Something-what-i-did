@@ -1,0 +1,57 @@
+@use 'sass:map';
+.base-modal {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    &__background {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: -1;
+    }
+
+    &__dialog {
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 8px;
+        outline: none;
+        border: 1px solid map.get($theme_colors, 'dark-secondary');
+        padding: 0;
+    }
+
+    &__header,
+    &__footer,
+    &__content {
+        padding: 12px;
+    }
+
+    &__header {
+        border-bottom: 1px solid map.get($theme_colors, 'dark-secondary');
+
+        h2 {
+            font-size: map.get($font_sizes, 'h5');
+        }
+    }
+
+    &__content {
+        font-size: map.get($font_sizes, 'standard');
+    }
+
+    &__footer {
+        @include flex-between-center;
+        width: 100%;
+        gap: 16px;
+        border-top: 1px solid map.get($theme_colors, 'dark-secondary');
+    }
+}

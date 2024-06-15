@@ -1,4 +1,4 @@
-<template lang="">
+<template>
     <div class="increment" ref="wrapper">
         <p>position -- {{ position }}</p>
         <p>count -- {{ count }}</p>
@@ -24,4 +24,4 @@ const IncrementPowerBy1 = defineComponent({
 });
 export default IncrementPowerBy1;
 </script>
-<style lang=""></style>
+<style></style>

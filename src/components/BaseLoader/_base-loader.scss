@@ -1,0 +1,133 @@
+@use 'sass:map';
+
+.custom-loader {
+    width: 100%;
+    text-align: center;
+
+    z-index: 5;
+
+    &._fullscreen {
+        height: 100vh;
+        width: 100vw;
+        max-width: 100%;
+        max-height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+    }
+
+    &._fullsize {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .lds-ring {
+        display: inline-block;
+        position: relative;
+        width: 100%;
+        height: 100%;
+    }
+
+    .lds-ring div {
+        box-sizing: border-box !important;
+        display: block;
+        position: absolute;
+        width: 150px;
+        height: 150px;
+        margin: 8px;
+        border: 18px solid map.get($theme_colors, 'main-background');
+        border-radius: 50%;
+        animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+        border-color: map.get($theme_colors, 'main-background') transparent transparent transparent !important;
+    }
+
+    .lds-ring div:nth-child(1) {
+        animation-delay: -0.45s;
+    }
+
+    .lds-ring div:nth-child(2) {
+        animation-delay: -0.3s;
+    }
+
+    .lds-ring div:nth-child(3) {
+        animation-delay: -0.15s;
+    }
+
+    @keyframes lds-ring {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(360deg);
+        }
+    }
+
+    &,
+    &._default {
+        .lds-ring {
+            width: 110px;
+            height: 110px;
+            div {
+                width: 100px;
+                height: 100px;
+                border: 14px solid map.get($theme_colors, 'main-background');
+            }
+        }
+    }
+
+    &._small {
+        .lds-ring {
+            width: 60px;
+            height: 60px;
+            div {
+                width: 50px;
+                height: 50px;
+                border: 8px solid map.get($theme_colors, 'main-background');
+            }
+        }
+    }
+
+    &._fixed,
+    &._absolute {
+        top: 0;
+        left: 0;
+    }
+
+    &._fixed {
+        position: fixed;
+    }
+
+    &._absolute {
+        position: absolute;
+    }
+
+    &._background {
+        background: #fff;
+    }
+
+    &._large {
+        .lds-ring {
+            width: 165px;
+            height: 165px;
+
+            div {
+                width: 150px;
+                height: 150px;
+                border: 18px solid map.get($theme_colors, 'main-background');
+            }
+        }
+    }
+}
+
+@keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,7 +1,7 @@
-<template lang="">
+<template>
     <Tabs v-model:activeIndex="activeIndex" :tabs="tabs">
         <template #activeTab>
-            <BaseTable :items="items" :columns="columns">
+            <BaseTable :items="items" :loading="loading" :columns="columns">
                 <template #address="{ item: { address } }">
                     {{ address.city }} - {{ address.street }} - {{ address.suite }}
                     {{ address.zipcode }}
@@ -24,12 +24,12 @@ const TableTabs = defineComponent({
         BaseTable,
     },
     setup() {
-        const { activeIndex, items, columns, tabs } = useTableTabs();
+        const { activeIndex, items, columns, tabs, loading } = useTableTabs();
 
-        return { activeIndex, items, columns, tabs };
+        return { activeIndex, items, columns, tabs, loading };
     },
 });
 
 export default TableTabs;
 </script>
-<style lang=""></style>
+<style></style>

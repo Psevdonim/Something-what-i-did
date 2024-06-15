@@ -7,21 +7,39 @@
                         {{ route.name }}
                     </RouterLink>
                 </li>
+
+                <li class="page-header__links-item">
+                    <BaseButton :text="changeLoaderButtonText" @click="changeLoader" />
+                </li>
             </ol>
         </nav>
     </article>
 </template>
 <script lang="ts">
-import { defineComponent } from "vue";
+import { computed, defineComponent, inject, toValue } from "vue";
 import { useRouter } from "vue-router";
-
+import type { IUseLoader } from "@/shared/lib";
 const PageHeader = defineComponent({
     name: "PageHeader",
     setup() {
         const router = useRouter();
-
         const routes = router.getRoutes();
-        return { routes };
+        const loader: IUseLoader = inject("loader");
+        console.log(loader);
+
+        const changeLoaderButtonText = computed(() =>
+            toValue(loader.loading) ? "Выключить Глобальный лоадер" : "Включить Глобальный лоадер",
+        );
+
+        const changeLoader = () => {
+            if (toValue(loader.loading)) {
+                loader.stopLoading();
+            } else {
+                loader.startLoading();
+            }
+        };
+
+        return { routes, loader, changeLoaderButtonText, changeLoader };
     },
 });
 
